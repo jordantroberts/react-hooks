@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     // Update the document title using the browser API
     document.title = `You clicked ${count} times`;
-  });
+  }, [count]);
 
   return (
     <div className="App">
