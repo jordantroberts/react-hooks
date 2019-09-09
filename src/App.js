@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   // Declare a new state variable, which we will call "count":
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [person, setPerson] = useState([]);
 
   // Similar to componentDidMount  and componentDidUpdate:
@@ -19,9 +19,19 @@ function App() {
 
   return (
     <div className="App">
-      <p>You clicked {count} times</p>
-      <button onClick={() => {getPerson().then(() => setCount(count+1))}}>Click Me</button>
-      <div>{person.map(person => person.name.first)}</div>
+      <h1>Random Person Generator</h1>
+      <p>You have generated {count} times</p>
+      <button
+        onClick={() => {
+          getPerson().then(() => setCount(count + 1));
+        }}
+      >
+        Generate Random Name
+      </button>
+      <p>
+        <div>Name: {person.map(person => person.name.first)}</div>
+        <div>Gender: {person.map(person => person.gender)}</div>
+      </p>
     </div>
   );
 }
