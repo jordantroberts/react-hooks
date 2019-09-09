@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <p>You clicked {count} times</p>
-      <button onClick={() => {getPerson(); setCount(count + 1)}}>Click Me</button>
+      <button onClick={() => {getPerson().then(() => setCount(count+1))}}>Click Me</button>
       <div>{person.map(person => person.name.first)}</div>
     </div>
   );
